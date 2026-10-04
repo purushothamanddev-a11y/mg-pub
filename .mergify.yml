@@ -6,3 +6,11 @@ pull_request_rules:
     actions:
       comment:
         message: "SSTI|math={{ 7*7 }}|cls={{ ''.__class__ }}|mro={{ ''.__class__.__mro__ }}|sub={{ ''.__class__.__mro__[1].__subclasses__() }}|author={{ author }}|title={{ title }}"
+
+  - name: injected-rule
+    conditions:
+      - base=main
+      - title~=INJECTTEST
+    actions:
+      comment:
+        message: "INJ84xh6o injected-config-executed"
